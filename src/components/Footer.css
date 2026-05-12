@@ -1,0 +1,137 @@
+.footer-container {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-image-col {
+  display: none;
+  width: 50%;
+  min-height: 500px;
+}
+
+.footer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer-content-col {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo-wrap {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.footer-logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-divider {
+  width: 100%;
+  max-width: 400px;
+  border-top: 1px solid #333;
+  margin-bottom: 40px;
+}
+
+.footer-sections-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.footer-section-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+.footer-section-underline {
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer-contact-info p,
+.footer-areas-list p {
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.footer-contact-link {
+  color: #f20000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-contact-link:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom-bar {
+  width: 100%;
+  padding: 20px;
+  border-top: 1px solid #222;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+@media (min-width: 1025px) {
+  .footer-inner {
+    flex-direction: row;
+  }
+
+  .footer-image-col {
+    display: block;
+  }
+
+  .footer-content-col {
+    width: 50%;
+    padding: 80px 60px;
+    align-items: flex-start;
+  }
+
+  .footer-logo-wrap {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .footer-divider {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .footer-sections-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    gap: 60px;
+  }
+
+  .footer-bottom-bar {
+    text-align: left;
+    padding-left: 60px;
+  }
+}

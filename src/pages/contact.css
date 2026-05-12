@@ -1,0 +1,78 @@
+.contact-page {
+  background: #ededed;
+}
+
+.contact-page-header {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 28px 18px 0;
+  text-align: center;
+}
+
+.contact-page-title {
+  margin: 0;
+  color: #333;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 800;
+}
+
+.contact-page-copy {
+  width: min(100%, 760px);
+  margin: 16px auto 0;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.contact-social-strip {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 16px 16px 26px;
+  background: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.contact-social-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #b7b7b7;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.contact-social-logo {
+  width: auto;
+  height: 30px;
+  opacity: 0.26;
+  filter: grayscale(1);
+}
+
+.contact-social-label {
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .contact-page-header {
+    padding: 16px 12px 0;
+  }
+
+  .contact-social-strip {
+    justify-content: center;
+    padding: 14px 12px 20px;
+    gap: 18px;
+  }
+
+  .contact-social-item {
+    font-size: 1.2rem;
+  }
+
+  .contact-social-logo {
+    height: 22px;
+  }
+}
