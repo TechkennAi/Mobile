@@ -1,5 +1,6 @@
 import { useState, useEffect, type FC } from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import { tmdLogoPath } from './BrandingIcons';
 import './Header.css';
 
@@ -8,7 +9,8 @@ const Header: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
+  const location = useLocation();
+  const pathname = location.pathname;
 
   useEffect(() => {
     if (!isMobileMenuOpen) {
@@ -60,14 +62,14 @@ const Header: FC = () => {
     >
       <div className="header-top-row">
         {/* Logo */}
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-          href="/"
-          className="header-logo"
-        >
-          <img src={tmdLogoPath} alt="Dylans Mobile Detailing" />
-        </motion.a>
+        <Link to="/" className="header-logo">
+          <motion.img 
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            src={tmdLogoPath} 
+            alt="Dylans Mobile Detailing" 
+          />
+        </Link>
 
         {/* Desktop Navigation - Centered */}
         <nav className="desktop-nav">
@@ -78,8 +80,7 @@ const Header: FC = () => {
               onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
               onMouseLeave={() => item.dropdown && setActiveDropdown(null)}
             >
-              <motion.a
-                href={item.href}
+              <motion.div
                 className={pathname === item.href ? 'header-nav-link is-active' : 'header-nav-link'}
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -87,13 +88,15 @@ const Header: FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {item.name}
+                <Link to={item.href} style={{ color: 'inherit', textDecoration: 'none' }}>
+                  {item.name}
+                </Link>
                 {item.dropdown && (
                   <span className={`dropdown-arrow ${activeDropdown === item.name ? 'is-open' : ''}`}>
                     ▾
                   </span>
                 )}
-              </motion.a>
+              </motion.div>
 
               {item.dropdown && (
                 <motion.div 
@@ -103,13 +106,13 @@ const Header: FC = () => {
                   transition={{ duration: 0.2 }}
                 >
                   {item.dropdown.map((subItem, subIndex) => (
-                    <a 
+                    <Link 
                       key={subItem.name} 
-                      href={subItem.href}
+                      to={subItem.href}
                       className={`dropdown-item ${subIndex === 0 ? 'is-first' : ''}`}
                     >
                       {subItem.name}
-                    </a>
+                    </Link>
                   ))}
                 </motion.div>
               )}
@@ -118,30 +121,32 @@ const Header: FC = () => {
         </nav>
 
         {/* Schedule Now Button */}
-        <motion.button
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          style={{
-            backgroundColor: '#f20000',
-            color: '#fff',
-            padding: '18px 40px',
-            fontSize: '18px',
-            fontWeight: 700,
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-            textTransform: 'uppercase',
-            flexShrink: 0,
-            display: 'none'
-          }}
-          className="desktop-schedule-btn"
-        >
-          Schedule Now
-        </motion.button>
+        <Link to="/contact" style={{ textDecoration: 'none' }}>
+          <motion.button
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{
+              backgroundColor: '#f20000',
+              color: '#fff',
+              padding: '18px 40px',
+              fontSize: '18px',
+              fontWeight: 700,
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textTransform: 'uppercase',
+              flexShrink: 0,
+              display: 'none'
+            }}
+            className="desktop-schedule-btn"
+          >
+            Schedule Now
+          </motion.button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -192,23 +197,23 @@ const Header: FC = () => {
               {item.dropdown && mobileDropdownOpen === item.name && (
                 <div className="mobile-submenu">
                   {/* Option to view all services */}
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className={`mobile-submenu-link${pathname === item.href ? ' is-active' : ''}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     style={{ fontWeight: 700, borderBottom: '1px solid rgba(255,255,255,0.05)' }}
                   >
                     View All Services
-                  </a>
+                  </Link>
                   {item.dropdown.map((subItem) => (
-                    <a
+                    <Link
                       key={subItem.name}
-                      href={subItem.href}
+                      to={subItem.href}
                       className={`mobile-submenu-link${pathname === subItem.href ? ' is-active' : ''}`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {subItem.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}

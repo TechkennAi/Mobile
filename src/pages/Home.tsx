@@ -1,5 +1,6 @@
 import { useEffect, useState, type FC } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { FaStar } from "react-icons/fa";
@@ -175,9 +176,9 @@ const Home: FC = () => {
                 <div className="showcase-overlay" />
                 <div className="showcase-content">
                   <span className="showcase-title">{item.title}</span>
-                  <a href={item.href} className="showcase-link">
+                  <Link to={item.href} className="showcase-link">
                     Learn More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

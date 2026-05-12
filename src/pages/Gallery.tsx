@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 import './gallery.css';
 
 // Import images
@@ -93,9 +94,9 @@ const Gallery: FC = () => {
           define our service. Whether you&apos;re considering a quick clean or a comprehensive
           cosmetic restoration, see what Dylan&apos;s Mobile Detailing can do for your vehicle.
         </p>
-        <a href="/services" className="gallery-cta">
+        <Link to="/services" className="gallery-cta">
           View Our Services
-        </a>
+        </Link>
       </section>
 
       <section className="gallery-grid-shell">

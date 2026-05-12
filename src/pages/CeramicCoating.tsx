@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import ContactActionsSection from '../components/ContactActionsSection';
 import './AutoDetailing.css'; // Reusing base styles

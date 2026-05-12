@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 type HeroSectionProps = {
   primaryHref?: string;
@@ -22,6 +23,9 @@ const HeroSection: FC<HeroSectionProps> = ({
   title = 'Revitalize Your Ride',
   subtitle = 'Lake Winnipesaukee & Lakes Region, NH'
 }) => {
+  const isInternalPrimary = primaryHref && primaryHref.startsWith('/');
+  const isInternalSecondary = secondaryHref && secondaryHref.startsWith('/');
+
   return (
     <section
       style={{
@@ -116,23 +120,46 @@ const HeroSection: FC<HeroSectionProps> = ({
         </motion.div>
         <div className="hero-cta-group">
             {primaryHref && primaryLabel ? (
+              isInternalPrimary ? (
+                <Link to={primaryHref} className="hero-cta hero-cta-primary">
+                  <motion.div
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                  >
+                    {primaryLabel}
+                  </motion.div>
+                </Link>
+              ) : (
+                <motion.a
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  href={primaryHref}
+                  className="hero-cta hero-cta-primary"
+                >
+                  {primaryLabel}
+                </motion.a>
+              )
+            ) : null}
+
+            {isInternalSecondary ? (
+              <Link to={secondaryHref} className="hero-cta hero-cta-secondary">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  {secondaryLabel}
+                </motion.div>
+              </Link>
+            ) : (
               <motion.a
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                href={primaryHref}
-                className="hero-cta hero-cta-primary"
+                href={secondaryHref}
+                className="hero-cta hero-cta-secondary"
               >
-                {primaryLabel}
+                {secondaryLabel}
               </motion.a>
-            ) : null}
-            <motion.a
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              href={secondaryHref}
-              className="hero-cta hero-cta-secondary"
-            >
-              {secondaryLabel}
-            </motion.a>
+            )}
           </div>
       </div>
 

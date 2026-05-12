@@ -1,3 +1,4 @@
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -11,32 +12,23 @@ import PaintCorrection from './pages/PaintCorrection';
 import './App.css';
 
 function App() {
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
-
-  let pageContent = <Home />;
-
-  if (pathname === '/services') {
-    pageContent = <Services />;
-  } else if (pathname === '/auto-detailing') {
-    pageContent = <AutoDetailing />;
-  } else if (pathname === '/boat-detailing') {
-    pageContent = <BoatDetailing />;
-  } else if (pathname === '/ceramic-coating') {
-    pageContent = <CeramicCoating />;
-  } else if (pathname === '/paint-correction') {
-    pageContent = <PaintCorrection />;
-  } else if (pathname === '/gallery') {
-    pageContent = <Gallery />;
-  } else if (pathname === '/contact') {
-    pageContent = <Contact />;
-  }
-
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <Header />
-      {pageContent}
-      <Footer />
-    </div>
+    <Router>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/auto-detailing" element={<AutoDetailing />} />
+          <Route path="/boat-detailing" element={<BoatDetailing />} />
+          <Route path="/ceramic-coating" element={<CeramicCoating />} />
+          <Route path="/paint-correction" element={<PaintCorrection />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

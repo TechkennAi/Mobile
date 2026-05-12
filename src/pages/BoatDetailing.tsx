@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './AutoDetailing.css'; // Reusing the same styling structure
 
 // Import images
@@ -110,7 +111,7 @@ const BoatDetailing: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <a href="/contact" className="btn-book">BOOK ONLINE</a>
+            <Link to="/contact" className="btn-book">BOOK ONLINE</Link>
             <a href="tel:6039986080" className="btn-call">
               <span className="icon-phone">📞</span> CALL NOW
             </a>
