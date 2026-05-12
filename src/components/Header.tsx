@@ -6,7 +6,7 @@ import './Header.css';
 const Header: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
 
@@ -39,6 +39,14 @@ const Header: FC = () => {
     { name: 'Contact Us', href: '/contact' }
   ];
 
+  const handleMobileLinkClick = (item: any) => {
+    if (item.dropdown) {
+      setMobileDropdownOpen(mobileDropdownOpen === item.name ? null : item.name);
+    } else {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -67,8 +75,8 @@ const Header: FC = () => {
             <div 
               key={item.name} 
               className="nav-item-wrapper"
-              onMouseEnter={() => item.dropdown && setIsDropdownOpen(true)}
-              onMouseLeave={() => item.dropdown && setIsDropdownOpen(false)}
+              onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
+              onMouseLeave={() => item.dropdown && setActiveDropdown(null)}
             >
               <motion.a
                 href={item.href}
@@ -81,7 +89,7 @@ const Header: FC = () => {
               >
                 {item.name}
                 {item.dropdown && (
-                  <span className={`dropdown-arrow ${isDropdownOpen ? 'is-open' : ''}`}>
+                  <span className={`dropdown-arrow ${activeDropdown === item.name ? 'is-open' : ''}`}>
                     ▾
                   </span>
                 )}
@@ -90,8 +98,8 @@ const Header: FC = () => {
               {item.dropdown && (
                 <motion.div 
                   className="services-dropdown"
-                  initial={{ opacity: 0, y: 10, display: 'none' }}
-                  animate={isDropdownOpen ? { opacity: 1, y: 0, display: 'block' } : { opacity: 0, y: 10, transitionEnd: { display: 'none' } }}
+                  initial={{ opacity: 0, y: 10, visibility: 'hidden' }}
+                  animate={activeDropdown === item.name ? { opacity: 1, y: 0, visibility: 'visible' } : { opacity: 0, y: 10, visibility: 'hidden' }}
                   transition={{ duration: 0.2 }}
                 >
                   {item.dropdown.map((subItem, subIndex) => (
@@ -159,14 +167,15 @@ const Header: FC = () => {
         >
           {navItems.map((item) => (
             <div key={item.name} className="mobile-menu-item-group">
-              <div className="mobile-menu-link-row">
-                <a
-                  href={item.href}
+              <div 
+                className="mobile-menu-link-row"
+                onClick={() => handleMobileLinkClick(item)}
+              >
+                <span
                   className={`mobile-menu-link${pathname === item.href ? ' is-active' : ''}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </span>
                 {item.dropdown && (
                   <button 
                     className={`mobile-dropdown-toggle ${mobileDropdownOpen === item.name ? 'is-open' : ''}`}
@@ -182,6 +191,15 @@ const Header: FC = () => {
               
               {item.dropdown && mobileDropdownOpen === item.name && (
                 <div className="mobile-submenu">
+                  {/* Option to view all services */}
+                  <a
+                    href={item.href}
+                    className={`mobile-submenu-link${pathname === item.href ? ' is-active' : ''}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    style={{ fontWeight: 700, borderBottom: '1px solid rgba(255,255,255,0.05)' }}
+                  >
+                    View All Services
+                  </a>
                   {item.dropdown.map((subItem) => (
                     <a
                       key={subItem.name}
