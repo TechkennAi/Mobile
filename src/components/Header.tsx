@@ -131,10 +131,10 @@ const Header: FC = () => {
             style={{
               backgroundColor: '#f20000',
               color: '#fff',
-              padding: '18px 40px',
-              fontSize: '18px',
+              padding: '12px 24px',
+              fontSize: '16px',
               fontWeight: 700,
-              border: 'none',
+              border: 'none', 
               borderRadius: '4px',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
@@ -158,8 +158,8 @@ const Header: FC = () => {
         </button>
       </div>
 
-      <a href="tel:6039986080" className="mobile-call-btn">
-        (603) 998-6080
+      <a href="tel:8566526126" className="mobile-call-btn">
+        CALL NOW
       </a>
 
       {/* Mobile Navigation */}

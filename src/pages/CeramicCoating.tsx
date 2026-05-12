@@ -35,7 +35,7 @@ const CeramicCoating: FC = () => {
         videoId="rzrXc_d1GrM"
         primaryHref="/contact"
         primaryLabel="BOOK ONLINE"
-        secondaryHref="tel:6039986080"
+        secondaryHref="tel:8566526126"
         secondaryLabel="CALL NOW"
         scrollTargetId="why-choose"
       />
@@ -85,7 +85,7 @@ const CeramicCoating: FC = () => {
           </div>
 
           <div style={{ marginTop: '60px', textAlign: 'center' }}>
-            <a href="tel:6039986080" className="package-cta-btn">
+            <a href="tel:8566526126" className="package-cta-btn">
               Call Now For a Free Quote
             </a>
           </div>

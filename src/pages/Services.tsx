@@ -8,9 +8,9 @@ const Services: FC = () => {
     <main>
       <HeroSection
         title="Professional Detailing Services"
-        subtitle="Comprehensive care for your vehicles and boats in the Lakes Region"
-        secondaryHref="tel:6039986080"
-        secondaryLabel="Call Now"
+        subtitle="Comprehensive care for your vehicles and boats in Moorestown, NJ & Surrounding Areas"
+        secondaryHref="tel:8566526126"
+        secondaryLabel="CALL NOW"
         scrollTargetId="services-packages"
       />
       <ServicesPackagesSection />

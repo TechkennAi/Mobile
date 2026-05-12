@@ -7,10 +7,10 @@ type ContactActionsSectionProps = {
   className?: string;
 };
 
-const phoneHref = 'tel:5551234567';
-const phoneLabel = '(555) 123-4567';
-const emailHref = 'mailto:info@example.com';
-const emailLabel = 'info@example.com';
+const phoneHref = 'tel:8566526126';
+const phoneLabel = '(856) 652-6126';
+const emailHref = 'mailto:wethebestll20@gmail.com';
+const emailLabel = 'wethebestll20@gmail.com';
 
 const ContactActionsSection: FC<ContactActionsSectionProps> = ({
   title,

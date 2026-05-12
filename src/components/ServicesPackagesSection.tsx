@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
 import './ServicesPackagesSection.css';
 
 type ServicesPackagesSectionProps = Record<string, never>;
@@ -13,14 +14,16 @@ type ServicePackage = {
   badge?: string;
 };
 
+const MotionLink = motion(Link);
+
 const packages: ServicePackage[] = [
   {
     title: 'Interior Refresh',
     description: 'Focus on interior details like seat and carpet cleaning, dashboard dusting, and upholstery treatment.',
     price: '199',
     features: [
-      'Vaccume & Wipe Down',
-      'Carpet & Upholstry Shampoo',
+      'Vacuum & Wipe Down',
+      'Carpet & Upholstery Shampoo',
       'Leather Conditioning',
       'Stain Removal'
     ],
@@ -54,6 +57,8 @@ const packages: ServicePackage[] = [
 ];
 
 const ServicesPackagesSection: FC<ServicesPackagesSectionProps> = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="services-packages" className="packages-section-new">
       <div className="packages-container">
@@ -84,6 +89,8 @@ const ServicesPackagesSection: FC<ServicesPackagesSectionProps> = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
               className={`package-row-card ${pkg.theme === 'dark-red' ? 'theme-red' : 'theme-light'}`}
+              onClick={() => navigate('/auto-detailing')}
+              style={{ cursor: 'pointer' }}
             >
               <div className="package-info-col">
                 <h3 className="package-row-title">{pkg.title}</h3>
@@ -108,14 +115,14 @@ const ServicesPackagesSection: FC<ServicesPackagesSectionProps> = () => {
               </div>
 
               <div className="package-cta-col">
-                <motion.a
+                <MotionLink 
+                  to="/auto-detailing" 
+                  className="package-row-cta"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  href="/auto-detailing"
-                  className="package-row-cta"
                 >
                   Learn More
-                </motion.a>
+                </MotionLink>
               </div>
             </motion.article>
           ))}

@@ -9,12 +9,12 @@ import exteriorGlow1 from '../assets/images/exterior-glow-v1.jpg';
 const Footer: FC = () => {
   const currentYear = new Date().getFullYear();
   const serviceAreas = [
-    'All of the Lakes Region',
-    'Wolfeboro',
-    'Meredith',
-    'Alton',
-    'Moultonborough',
-    'Tuftonboro',
+    'Moorestown',
+    'Mount Laurel',
+    'Cherry Hill',
+    'Maple Shade',
+    'Cinnaminson',
+    'Haddonfield',
     'And More!'
   ];
 
@@ -54,21 +54,21 @@ const Footer: FC = () => {
               <div className="footer-section-underline" />
               <p>
                 Phone:{' '}
-                <a href="tel:6039986080" className="footer-contact-link">
-                  (603) 998-6080
+                <a href="tel:8566526126" className="footer-contact-link">
+                  (856) 652-6126
                 </a>
               </p>
               <p>Email:</p>
               <p>
                 <a
-                  href="mailto:themobiledetailingcollc@gmail.com"
+                  href="mailto:wethebestll20@gmail.com"
                   className="footer-contact-link"
                 >
-                  themobiledetailingcollc@gmail.com
+                  wethebestll20@gmail.com
                 </a>
               </p>
-              <p>Address: 1070 Whittier</p>
-              <p>Highway, Moultonboro NH 03254</p>
+              <p>Address: 28 Plamer dr</p>
+              <p>Moorestown, NJ 08057</p>
             </section>
 
             <section className="footer-areas-list">

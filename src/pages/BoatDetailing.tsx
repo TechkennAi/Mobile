@@ -89,21 +89,21 @@ const BoatDetailing: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Lake Winnipesaukee & Lakes Region, NH
+            Moorestown, NJ & Surrounding Areas
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Dylan's Mobile Detailing provides high-end boat detailing services throughout Lake Winnipesaukee and the greater Lakes Region of New Hampshire. We specialize in oxidation removal, gelcoat restoration, gelcoat correction, and long-term ceramic protection care for harsh New England conditions.
+            Dylan's Mobile Detailing provides high-end boat detailing services throughout Moorestown, NJ and the surrounding areas. We specialize in oxidation removal, gelcoat restoration, gelcoat correction, and long-term ceramic protection care.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Whether your boat is docked in Wolfeboro, at a slip in Meredith, or filed in Moultonborough, our team delivers professional marine detailing designed to restore and protect your investment.
+            Whether your boat is at a marina or a private dock, our team delivers professional marine detailing designed to restore and protect your investment.
           </motion.p>
           <motion.div 
             className="auto-hero-btns"
@@ -112,7 +112,7 @@ const BoatDetailing: FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Link to="/contact" className="btn-book">BOOK ONLINE</Link>
-            <a href="tel:6039986080" className="btn-call">
+            <a href="tel:8566526126" className="btn-call">
               <span className="icon-phone">📞</span> CALL NOW
             </a>
           </motion.div>
@@ -144,7 +144,7 @@ const BoatDetailing: FC = () => {
                   </li>
                 ))}
               </ul>
-              <a href="tel:6039986080" className="package-cta-btn">
+              <a href="tel:8566526126" className="package-cta-btn">
                 Call Now For a Free Quote
               </a>
             </div>
@@ -176,15 +176,13 @@ const BoatDetailing: FC = () => {
             <div className="addons-service-areas">
               <p>We provide boat detailing in:</p>
               <div className="areas-grid">
-                <div className="area-item">✔ Moultonborough</div>
-                <div className="area-item">✔ Laconia</div>
-                <div className="area-item">✔ Lakes Region</div>
-                <div className="area-item">✔ Gilford</div>
-                <div className="area-item">✔ Center Harbor</div>
-                <div className="area-item">✔ Alton</div>
-                <div className="area-item">✔ Wolfeboro</div>
-                <div className="area-item">✔ Lake Winnipesaukee region</div>
-                <div className="area-item">✔ Meredith</div>
+                <div className="area-item">✔ Moorestown</div>
+                <div className="area-item">✔ Mount Laurel</div>
+                <div className="area-item">✔ Cherry Hill</div>
+                <div className="area-item">✔ Maple Shade</div>
+                <div className="area-item">✔ Cinnaminson</div>
+                <div className="area-item">✔ Haddonfield</div>
+                <div className="area-item">✔ And More!</div>
                 <div className="area-item">✔ Mobile service available where marina policies allow.*</div>
               </div>
               <p className="disclaimer-note">*Mobile service available where marina policies allow.</p>

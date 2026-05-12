@@ -86,7 +86,7 @@ const AutoDetailing: FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Link to="/contact" className="btn-book">BOOK ONLINE</Link>
-            <a href="tel:6039986080" className="btn-call">
+            <a href="tel:8566526126" className="btn-call">
               <span className="icon-phone">📞</span> CALL NOW
             </a>
           </motion.div>
@@ -117,7 +117,7 @@ const AutoDetailing: FC = () => {
                   </li>
                 ))}
               </ul>
-              <a href="tel:6039986080" className="package-cta-btn">
+              <a href="tel:8566526126" className="package-cta-btn">
                 Call Now For a Free Quote
               </a>
             </div>

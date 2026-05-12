@@ -1,6 +1,6 @@
 import { useEffect, useState, type FC } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { FaStar } from "react-icons/fa";
@@ -29,7 +29,10 @@ type CarouselImage = {
   alt: string;
 };
 
+const MotionLink = motion(Link);
+
 const Home: FC = () => {
+  const navigate = useNavigate();
   const carouselImages: CarouselImage[] = [
     {
       src: gal1,
@@ -144,9 +147,10 @@ const Home: FC = () => {
       <HeroSection
         primaryHref="/auto-detailing"
         primaryLabel="View Our Services"
-        secondaryHref="tel:6039986080"
-        secondaryLabel="(603) 998-6080"
+        secondaryHref="tel:8566526126"
+        secondaryLabel="CALL NOW"
         scrollTargetId="post-hero-sections"
+        subtitle="Moorestown, NJ & Surrounding Areas"
       />
 
       <div id="post-hero-sections" className="post-hero-sections">
@@ -165,6 +169,7 @@ const Home: FC = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="showcase-card"
+              onClick={() => navigate(item.href)}
             >
               <div className="showcase-card-inner">
                 <img
@@ -176,9 +181,14 @@ const Home: FC = () => {
                 <div className="showcase-overlay" />
                 <div className="showcase-content">
                   <span className="showcase-title">{item.title}</span>
-                  <Link to={item.href} className="showcase-link">
+                  <MotionLink 
+                    to={item.href} 
+                    className="showcase-link"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     Learn More
-                  </Link>
+                  </MotionLink>
                 </div>
               </div>
             </motion.div>

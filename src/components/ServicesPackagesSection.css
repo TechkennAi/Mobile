@@ -148,7 +148,7 @@
 }
 
 .package-row-cta {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: #ff0000;
@@ -162,6 +162,9 @@
   transition: all 0.3s ease;
   width: 100%;
   box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
 }
 
 .theme-red .package-row-cta {

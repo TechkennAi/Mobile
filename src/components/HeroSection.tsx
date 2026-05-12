@@ -13,6 +13,8 @@ type HeroSectionProps = {
   subtitle?: string;
 };
 
+const MotionLink = motion(Link);
+
 const HeroSection: FC<HeroSectionProps> = ({
   primaryHref,
   primaryLabel,
@@ -121,14 +123,14 @@ const HeroSection: FC<HeroSectionProps> = ({
         <div className="hero-cta-group">
             {primaryHref && primaryLabel ? (
               isInternalPrimary ? (
-                <Link to={primaryHref} className="hero-cta hero-cta-primary">
-                  <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                  >
-                    {primaryLabel}
-                  </motion.div>
-                </Link>
+                <MotionLink 
+                  to={primaryHref} 
+                  className="hero-cta hero-cta-primary"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  {primaryLabel}
+                </MotionLink>
               ) : (
                 <motion.a
                   whileHover={{ scale: 1.03 }}
@@ -142,14 +144,14 @@ const HeroSection: FC<HeroSectionProps> = ({
             ) : null}
 
             {isInternalSecondary ? (
-              <Link to={secondaryHref} className="hero-cta hero-cta-secondary">
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  {secondaryLabel}
-                </motion.div>
-              </Link>
+              <MotionLink 
+                to={secondaryHref} 
+                className="hero-cta hero-cta-secondary"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                {secondaryLabel}
+              </MotionLink>
             ) : (
               <motion.a
                 whileHover={{ scale: 1.03 }}
