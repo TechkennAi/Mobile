@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "npx vite",
-    "build": "npx tsc -b && npx vite build",
-    "lint": "npx eslint .",
-    "preview": "npx vite preview"
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
