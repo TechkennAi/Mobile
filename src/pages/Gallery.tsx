@@ -1,6 +1,20 @@
 import type { FC } from 'react';
 import './gallery.css';
 
+// Import images
+import totalTransformation1 from '../assets/images/total-transformation-v1.jpg';
+import gal2 from '../assets/images/gal2.jpg';
+import gal3 from '../assets/images/gal3.jpg';
+import interior1 from '../assets/images/interior-1000x1000-v1.jpg';
+import gal4 from '../assets/images/gal4.jpg';
+import exteriorGlow1 from '../assets/images/exterior-glow-v1.jpg';
+import services3 from '../assets/images/services-3.jpg';
+import exteriorGlow2 from '../assets/images/exterior-glow-2.jpg';
+import gal5 from '../assets/images/gal5.jpg';
+import corvette1 from '../assets/images/tmd-corvette-1.png';
+import services1 from '../assets/images/services-1.jpg';
+import gal1 from '../assets/images/gal-1.jpg';
+
 type GalleryImage = {
   src: string;
   alt: string;
@@ -9,55 +23,55 @@ type GalleryImage = {
 
 const galleryImages: GalleryImage[] = [
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/11/total-transformation-v1.jpg',
+    src: totalTransformation1,
     alt: 'Black sports car with glossy finish',
     className: 'gallery-item-tall'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/10/gal2.jpg',
+    src: gal2,
     alt: 'White truck after detailing'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/10/gal3.jpg',
+    src: gal3,
     alt: 'Black pickup truck exterior detail'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/11/interior-1000x1000-v1.jpg',
+    src: interior1,
     alt: 'Detailed truck interior',
     className: 'gallery-item-tall'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/10/gal4.jpg',
+    src: gal4,
     alt: 'Detailed RV exterior',
     className: 'gallery-item-tall'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/11/exterior-glow-v1.jpg',
+    src: exteriorGlow1,
     alt: 'Light blue SUV after wash'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/10/services-3.jpg',
+    src: services3,
     alt: 'Red boat detailing'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/11/exterior-glow-2.jpg',
+    src: exteriorGlow2,
     alt: 'Blue SUV closeup'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/10/gal5.jpg',
+    src: gal5,
     alt: 'White SUV exterior shine'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/10/tmd-corvette-1.png',
+    src: corvette1,
     alt: 'Red corvette after detail',
     className: 'gallery-item-wide'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/10/services-1.jpg',
+    src: services1,
     alt: 'Blue truck detailing'
   },
   {
-    src: '/themobiledetailingco.com/wp-content/uploads/2024/10/gal-1.jpg',
+    src: gal1,
     alt: 'Detailed black sports car',
     className: 'gallery-item-wide'
   }

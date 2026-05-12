@@ -2,13 +2,20 @@ import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import './AutoDetailing.css'; // Reusing the same styling structure
 
+// Import images
+import boat1 from '../assets/images/pexels-roman-odintsov-8356431.jpg';
+import boat2 from '../assets/images/pexels-ron-lach-9952358-scaled.jpg';
+import boat3 from '../assets/images/pexels-pixabay-163236.jpg';
+import boat4 from '../assets/images/pexels-anton-kudryashov-118639843-10931934.jpg';
+import boatHero from '../assets/images/pexels-huy-phan-316220-28602933.jpg';
+
 const BoatDetailing: FC = () => {
   const packages = [
     {
       title: 'Bronze Plan',
       price: '35',
       priceSuffix: '/FT',
-      image: '/themobiledetailingco.com/wp-content/uploads/2026/02/pexels-roman-odintsov-8356431.jpg',
+      image: boat1,
       features: [
         'Basic interior detail',
         'Exterior wash & surface protection',
@@ -23,7 +30,7 @@ const BoatDetailing: FC = () => {
       title: 'Gold Plan',
       price: '60',
       priceSuffix: '/FT',
-      image: '/themobiledetailingco.com/wp-content/uploads/2026/02/pexels-ron-lach-9952358-scaled.jpg',
+      image: boat2,
       features: [
         'Full interior detail',
         'Full exterior detail',
@@ -37,7 +44,7 @@ const BoatDetailing: FC = () => {
       title: 'Platinum Plan',
       price: '100',
       priceSuffix: '/FT',
-      image: '/themobiledetailingco.com/wp-content/uploads/2026/02/pexels-pixabay-163236.jpg',
+      image: boat3,
       features: [
         'Includes everything in the Gold Plan, plus:',
         'Professional gelcoat correction',
@@ -51,7 +58,7 @@ const BoatDetailing: FC = () => {
     {
       title: 'Jet Ski Detailing',
       price: '225',
-      image: '/themobiledetailingco.com/wp-content/uploads/2026/02/pexels-anton-kudryashov-118639843-10931934.jpg',
+      image: boat4,
       features: [
         'Full exterior wash',
         'Protective sealant',
@@ -65,7 +72,7 @@ const BoatDetailing: FC = () => {
   return (
     <div className="auto-detailing-page">
       {/* Hero Section */}
-      <section className="auto-hero boat-hero" style={{ backgroundImage: 'url("/themobiledetailingco.com/wp-content/uploads/2026/02/pexels-huy-phan-316220-28602933.jpg")' }}>
+      <section className="auto-hero boat-hero" style={{ backgroundImage: `url(${boatHero})` }}>
         <div className="auto-hero-overlay" />
         <div className="auto-hero-content">
           <motion.h1

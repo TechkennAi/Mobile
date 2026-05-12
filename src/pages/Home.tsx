@@ -13,6 +13,16 @@ import {
 } from "../components/BrandingIcons";
 import "./home.css";
 
+// Import images
+import gal1 from "../assets/images/gal-1.jpg";
+import gal2 from "../assets/images/gal2.jpg";
+import gal3 from "../assets/images/gal3.jpg";
+import gal4 from "../assets/images/gal4.jpg";
+import gal5 from "../assets/images/gal5.jpg";
+import services3 from "../assets/images/services-3.jpg";
+import services2 from "../assets/images/services-2.jpg";
+import interior1 from "../assets/images/interior-1000x1000-v1.jpg";
+
 type CarouselImage = {
   src: string;
   alt: string;
@@ -21,27 +31,27 @@ type CarouselImage = {
 const Home: FC = () => {
   const carouselImages: CarouselImage[] = [
     {
-      src: "/themobiledetailingco.com/wp-content/uploads/2024/10/gal-1.jpg",
+      src: gal1,
       alt: "Freshly washed white SUV",
     },
     {
-      src: "/themobiledetailingco.com/wp-content/uploads/2024/10/gal2.jpg",
+      src: gal2,
       alt: "Clean white vehicle after detailing",
     },
     {
-      src: "/themobiledetailingco.com/wp-content/uploads/2024/10/gal3.jpg",
+      src: gal3,
       alt: "Washed car with glossy finish",
     },
     {
-      src: "/themobiledetailingco.com/wp-content/uploads/2024/10/gal4.jpg",
+      src: gal4,
       alt: "Detailed vehicle exterior",
     },
     {
-      src: "/themobiledetailingco.com/wp-content/uploads/2024/10/gal5.jpg",
+      src: gal5,
       alt: "Detailed exterior of a clean car",
     },
     {
-      src: "/themobiledetailingco.com/wp-content/uploads/2024/10/services-3.jpg",
+      src: services3,
       alt: "Glossy clean vehicle exterior",
     },
   ];
@@ -56,21 +66,21 @@ const Home: FC = () => {
   const detailShowcase = [
     {
       title: "Auto Detailing",
-      src: "/themobiledetailingco.com/wp-content/uploads/2024/10/services-2.jpg",
+      src: services2,
       alt: "Exterior of a clean vehicle",
       objectPosition: "center center",
       href: "/auto-detailing",
     },
     {
       title: "Interior Reset",
-      src: "/themobiledetailingco.com/wp-content/uploads/2024/11/interior-1000x1000-v1.jpg",
+      src: interior1,
       alt: "Cleaned vehicle interior",
       objectPosition: "center center",
       href: "/auto-detailing",
     },
     {
       title: "Paint Correction",
-      src: "/themobiledetailingco.com/wp-content/uploads/2024/10/services-3.jpg",
+      src: services3,
       alt: "Detailed car paint correction",
       objectPosition: "center center",
       href: "/paint-correction",
@@ -100,8 +110,7 @@ const Home: FC = () => {
       reviewerName: "MrCbassett",
       reviewerMeta: "1 year ago",
       initial: "M",
-      avatarSrc:
-        "/themobiledetailingco.com/wp-content/uploads/2024/10/gal-1.jpg",
+      avatarSrc: gal1,
       avatarColor: "#f44336",
       quote:
         "What an outstanding job they did with my truck . It is 10 years old and it look absolutely beautiful. Thank you for all you hard work an...",
@@ -374,7 +383,7 @@ const Home: FC = () => {
           ))}
         </div>
         <img
-          src="/themobiledetailingco.com/wp-content/uploads/2024/11/interior-1000x1000-v1.jpg"
+          src={interior1}
           alt="Detailed car interior"
           style={{
             width: "100%",

@@ -2,12 +2,17 @@ import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import './AutoDetailing.css';
 
+// Import images
+import interior1 from '../assets/images/interior-1000x1000-v1.jpg';
+import exteriorGlow1 from '../assets/images/exterior-glow-v1.jpg';
+import totalTransformation1 from '../assets/images/total-transformation-v1.jpg';
+
 const AutoDetailing: FC = () => {
   const packages = [
     {
       title: 'Interior Refresh',
       price: '199',
-      image: '/themobiledetailingco.com/wp-content/uploads/2024/11/interior-1000x1000-v1.jpg',
+      image: interior1,
       features: [
         'Detailed Vacuum & Wipe Down',
         'Trash Removal',
@@ -23,7 +28,7 @@ const AutoDetailing: FC = () => {
     {
       title: 'Exterior Glow',
       price: '199',
-      image: '/themobiledetailingco.com/wp-content/uploads/2024/11/exterior-glow-v1.jpg',
+      image: exteriorGlow1,
       features: [
         'Hand Wash & Foam Bath',
         'Bug & Tar Removal',
@@ -39,7 +44,7 @@ const AutoDetailing: FC = () => {
     {
       title: 'Total Transformation',
       price: '299',
-      image: '/themobiledetailingco.com/wp-content/uploads/2024/11/total-transformation-v1.jpg',
+      image: totalTransformation1,
       features: [
         'Luxury Detailing Services',
         'Inside & Out Deep Cleaning',

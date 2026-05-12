@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { tmdLogoPath } from './BrandingIcons';
 import './Footer.css';
 
+// Import image
+import exteriorGlow1 from '../assets/images/exterior-glow-v1.jpg';
+
 const Footer: FC = () => {
   const currentYear = new Date().getFullYear();
   const serviceAreas = [
@@ -27,7 +30,7 @@ const Footer: FC = () => {
         {/* Left Image Column - Visible on Wide Screens */}
         <div className="footer-image-col">
           <img 
-            src="/themobiledetailingco.com/wp-content/uploads/2024/11/exterior-glow-v1.jpg" 
+            src={exteriorGlow1} 
             alt="Red Corvette Detail" 
             className="footer-image"
           />

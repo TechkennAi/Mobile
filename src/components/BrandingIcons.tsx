@@ -1,14 +1,15 @@
 import type { FC, SVGProps } from 'react';
+import googleIconPath from '../assets/images/google.png';
+import facebookIconPath from '../assets/images/facebook.png';
+import instagramIconPath from '../assets/images/instagram.png';
+import nextdoorIconPath from '../assets/images/nextdoor.png';
+import tmdLogoPath from '../assets/images/mobiledetailing.png';
 
 type SvgIconProps = SVGProps<SVGSVGElement> & {
   size?: number;
 };
 
-export const googleIconPath = '/themobiledetailingco.com/wp-content/uploads/2024/10/google.png';
-export const facebookIconPath = '/themobiledetailingco.com/wp-content/uploads/2024/10/facebook.png';
-export const instagramIconPath = '/themobiledetailingco.com/wp-content/uploads/2024/10/instagram.png';
-export const nextdoorIconPath = '/themobiledetailingco.com/wp-content/uploads/2024/10/nextdoor.png';
-export const tmdLogoPath = '/themobiledetailingco.com/wp-content/uploads/2024/10/mobiledetailing.png';
+export { googleIconPath, facebookIconPath, instagramIconPath, nextdoorIconPath, tmdLogoPath };
 
 export const StarIcon: FC<SvgIconProps> = ({ size = 12, ...props }) => (
   <svg
